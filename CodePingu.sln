@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pingu.Services", "Pingu.Ser
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pingu.Config", "Pingu.Config\Pingu.Config.csproj", "{80DDF04D-41F8-4231-B928-80BB2DC524BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingu.DbApi", "Pingu.DbApi\Pingu.DbApi.csproj", "{E51255DB-40A0-45BD-98C6-CC873D7B3DF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pingu.DbApi", "Pingu.DbApi\Pingu.DbApi.csproj", "{E51255DB-40A0-45BD-98C6-CC873D7B3DF5}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Pingu.BackOffice", "Pingu.BackOffice\Pingu.BackOffice.esproj", "{55A641CA-D565-48E7-B5D8-41F5735F4A79}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Pingu.FrontOffice", "Pingu.FrontOffice\Pingu.FrontOffice.esproj", "{B5E1CF56-CD06-4B81-BBC0-454102A33292}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,18 @@ Global
 		{E51255DB-40A0-45BD-98C6-CC873D7B3DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E51255DB-40A0-45BD-98C6-CC873D7B3DF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E51255DB-40A0-45BD-98C6-CC873D7B3DF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55A641CA-D565-48E7-B5D8-41F5735F4A79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A641CA-D565-48E7-B5D8-41F5735F4A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A641CA-D565-48E7-B5D8-41F5735F4A79}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{55A641CA-D565-48E7-B5D8-41F5735F4A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A641CA-D565-48E7-B5D8-41F5735F4A79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55A641CA-D565-48E7-B5D8-41F5735F4A79}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B5E1CF56-CD06-4B81-BBC0-454102A33292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5E1CF56-CD06-4B81-BBC0-454102A33292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5E1CF56-CD06-4B81-BBC0-454102A33292}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B5E1CF56-CD06-4B81-BBC0-454102A33292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5E1CF56-CD06-4B81-BBC0-454102A33292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5E1CF56-CD06-4B81-BBC0-454102A33292}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
