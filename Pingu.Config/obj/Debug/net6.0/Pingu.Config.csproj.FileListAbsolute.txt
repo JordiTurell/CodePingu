@@ -1,0 +1,17 @@
+F:\Projects\CodePingu\Pingu.Config\bin\Debug\net6.0\Pingu.Config.deps.json
+F:\Projects\CodePingu\Pingu.Config\bin\Debug\net6.0\Pingu.Config.runtimeconfig.json
+F:\Projects\CodePingu\Pingu.Config\bin\Debug\net6.0\Pingu.Config.dll
+F:\Projects\CodePingu\Pingu.Config\bin\Debug\net6.0\Pingu.Config.pdb
+F:\Projects\CodePingu\Pingu.Config\bin\Debug\net6.0\Pingu.Entities.dll
+F:\Projects\CodePingu\Pingu.Config\bin\Debug\net6.0\Pingu.Entities.pdb
+F:\Projects\CodePingu\Pingu.Config\obj\Debug\net6.0\Pingu.Config.csproj.AssemblyReference.cache
+F:\Projects\CodePingu\Pingu.Config\obj\Debug\net6.0\Pingu.Config.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\CodePingu\Pingu.Config\obj\Debug\net6.0\Pingu.Config.AssemblyInfoInputs.cache
+F:\Projects\CodePingu\Pingu.Config\obj\Debug\net6.0\Pingu.Config.AssemblyInfo.cs
+F:\Projects\CodePingu\Pingu.Config\obj\Debug\net6.0\Pingu.Config.csproj.CoreCompileInputs.cache
+F:\Projects\CodePingu\Pingu.Config\obj\Debug\net6.0\Pingu.Config.csproj.CopyComplete
+F:\Projects\CodePingu\Pingu.Config\obj\Debug\net6.0\Pingu.Config.dll
+F:\Projects\CodePingu\Pingu.Config\obj\Debug\net6.0\refint\Pingu.Config.dll
+F:\Projects\CodePingu\Pingu.Config\obj\Debug\net6.0\Pingu.Config.pdb
+F:\Projects\CodePingu\Pingu.Config\obj\Debug\net6.0\Pingu.Config.genruntimeconfig.cache
+F:\Projects\CodePingu\Pingu.Config\obj\Debug\net6.0\ref\Pingu.Config.dll

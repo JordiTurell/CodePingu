@@ -1,0 +1,12 @@
+F:\Projects\CodePingu\Pingu.Entities\bin\Debug\net6.0\Pingu.Entities.deps.json
+F:\Projects\CodePingu\Pingu.Entities\bin\Debug\net6.0\Pingu.Entities.dll
+F:\Projects\CodePingu\Pingu.Entities\bin\Debug\net6.0\Pingu.Entities.pdb
+F:\Projects\CodePingu\Pingu.Entities\obj\Debug\net6.0\Pingu.Entities.csproj.AssemblyReference.cache
+F:\Projects\CodePingu\Pingu.Entities\obj\Debug\net6.0\Pingu.Entities.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\CodePingu\Pingu.Entities\obj\Debug\net6.0\Pingu.Entities.AssemblyInfoInputs.cache
+F:\Projects\CodePingu\Pingu.Entities\obj\Debug\net6.0\Pingu.Entities.AssemblyInfo.cs
+F:\Projects\CodePingu\Pingu.Entities\obj\Debug\net6.0\Pingu.Entities.csproj.CoreCompileInputs.cache
+F:\Projects\CodePingu\Pingu.Entities\obj\Debug\net6.0\Pingu.Entities.dll
+F:\Projects\CodePingu\Pingu.Entities\obj\Debug\net6.0\refint\Pingu.Entities.dll
+F:\Projects\CodePingu\Pingu.Entities\obj\Debug\net6.0\Pingu.Entities.pdb
+F:\Projects\CodePingu\Pingu.Entities\obj\Debug\net6.0\ref\Pingu.Entities.dll

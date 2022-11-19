@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pingu.Entities", "Pingu.Entities\Pingu.Entities.csproj", "{3C3DD97A-7B68-40C5-AFC1-4EB9C1DC3937}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pingu.Services", "Pingu.Services\Pingu.Services.csproj", "{CE9353DB-5054-470F-9A0B-50B8C5EB6929}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pingu.Config", "Pingu.Config\Pingu.Config.csproj", "{80DDF04D-41F8-4231-B928-80BB2DC524BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingu.DbApi", "Pingu.DbApi\Pingu.DbApi.csproj", "{E51255DB-40A0-45BD-98C6-CC873D7B3DF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C3DD97A-7B68-40C5-AFC1-4EB9C1DC3937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C3DD97A-7B68-40C5-AFC1-4EB9C1DC3937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C3DD97A-7B68-40C5-AFC1-4EB9C1DC3937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C3DD97A-7B68-40C5-AFC1-4EB9C1DC3937}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE9353DB-5054-470F-9A0B-50B8C5EB6929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE9353DB-5054-470F-9A0B-50B8C5EB6929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE9353DB-5054-470F-9A0B-50B8C5EB6929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9353DB-5054-470F-9A0B-50B8C5EB6929}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80DDF04D-41F8-4231-B928-80BB2DC524BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80DDF04D-41F8-4231-B928-80BB2DC524BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80DDF04D-41F8-4231-B928-80BB2DC524BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80DDF04D-41F8-4231-B928-80BB2DC524BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E51255DB-40A0-45BD-98C6-CC873D7B3DF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E51255DB-40A0-45BD-98C6-CC873D7B3DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E51255DB-40A0-45BD-98C6-CC873D7B3DF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E51255DB-40A0-45BD-98C6-CC873D7B3DF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36B110E8-952F-41BB-83B2-D271B81B1503}
+	EndGlobalSection
+EndGlobal
