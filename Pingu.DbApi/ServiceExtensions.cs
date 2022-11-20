@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.UI.Services;
 using Pingu.Config.Abstract;
 using Pingu.Config.Concrete;
+using Pingu.DbApi.JwtFeatures;
 using Pingu.Entities;
 using Pingu.Services.Lenguajes;
 
@@ -15,6 +16,7 @@ namespace Pingu.DbApi
 
         public static void Interface(IServiceCollection collection)
         {
+            collection.AddScoped<JwtHandler>();
             collection.AddScoped<ILenguajesServices, LenguajesServices>();
         }
         public static void RegisterRepos(this IServiceCollection collection)
