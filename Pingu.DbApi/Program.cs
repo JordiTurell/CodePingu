@@ -2,8 +2,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using Pingu.Config.Concrete;
 using Pingu.DbApi;
+using Pingu.DbApi.Models;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,6 +32,35 @@ builder.Services.AddAuthentication(opt =>
         ValidAudience = jwtSettings["validAudience"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8
             .GetBytes(jwtSettings.GetSection("securityKey").Value))
+    };
+
+
+    options.Events = new JwtBearerEvents()
+    {
+        OnAuthenticationFailed = c =>
+        {
+            c.NoResult();
+            c.Response.StatusCode = 500;
+            c.Response.ContentType = "text/plain";
+            return c.Response.WriteAsync(c.Exception.ToString());
+        },
+
+        OnChallenge = context =>
+        {
+            context.HandleResponse();
+            context.Response.StatusCode = 404;
+            context.Response.ContentType = "application/json";
+            var result = JsonConvert.SerializeObject(new ResponseItem<string>() { item = "Usted no esta autorizado" });
+            return context.Response.WriteAsync(result.ToString());
+        },
+
+        OnForbidden = context =>
+        {
+            context.Response.StatusCode = 400;
+            context.Response.ContentType = "application/json";
+            var result = JsonConvert.SerializeObject(new ResponseItem<string>() { item = "Usted no tiene permisos sobre este recurso" });
+            return context.Response.WriteAsync(result.ToString());
+        }
     };
 });
 

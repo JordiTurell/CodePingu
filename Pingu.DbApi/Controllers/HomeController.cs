@@ -9,5 +9,10 @@ namespace Pingu.DbApi.Controllers
         public HomeController()
         {
         }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }

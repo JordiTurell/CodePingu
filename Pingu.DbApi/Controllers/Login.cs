@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Pingu.Config.Concrete;
@@ -10,7 +11,7 @@ namespace Pingu.DbApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class Login : ControllerBase
+    public class Login : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly JwtHandler _jwtHandler;
@@ -22,8 +23,9 @@ namespace Pingu.DbApi.Controllers
         }
 
 
+        [Route("Acceso")]
         [HttpPost]
-        public async Task<IActionResult> Authorize([FromBody] RequestItem<ApplicationUser> userForAuthentication)
+        public async Task<IActionResult> Acceso(RequestItem<UsersVM> userForAuthentication)
         {
             var response = new ResponseItem<Authorize>() {
                 status = false,
@@ -34,8 +36,8 @@ namespace Pingu.DbApi.Controllers
                 message = ""
             };
             
-            var user = await _userManager.FindByNameAsync(userForAuthentication.item.UserName);
-            if (user == null || !await _userManager.CheckPasswordAsync(user, userForAuthentication.item.PasswordHash))
+            var user = await _userManager.FindByNameAsync(userForAuthentication.item.user);
+            if (user == null || !await _userManager.CheckPasswordAsync(user, userForAuthentication.item.password))
             {
                 return Unauthorized(response);
             }
@@ -51,8 +53,9 @@ namespace Pingu.DbApi.Controllers
             return Ok(response);
         }
 
+        [Route("Demo")]
         [HttpPost]
-        public IActionResult Demo([FromBody] RequestItem<string> data)
+        public IActionResult Demo(RequestItem<string> data)
         {
             if(data.item == "holi")
             {
