@@ -15,17 +15,25 @@ namespace Pingu.DbApi.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly JwtHandler _jwtHandler;
-
+        
         public Login(UserManager<ApplicationUser> userManager, JwtHandler jwtHandler)
         {
             _userManager = userManager;
             _jwtHandler = jwtHandler;
         }
 
+        [Route("ValidateToken")]
+        [HttpPost]
+        public async Task<IActionResult> ValidateToken([FromBody] RequestItem<string> token)
+        {
+            JwtSecurityToken t = new JwtSecurityTokenHandler().ReadJwtToken(token.item);
+            var a = t;
+            return Ok(t);
+        }
 
         [Route("Acceso")]
         [HttpPost]
-        public async Task<IActionResult> Acceso(RequestItem<UsersVM> userForAuthentication)
+        public async Task<IActionResult> Acceso([FromBody] RequestItem<UsersVM> userForAuthentication)
         {
             var response = new ResponseItem<Authorize>() {
                 status = false,
@@ -46,10 +54,11 @@ namespace Pingu.DbApi.Controllers
             var claims = _jwtHandler.GetClaims(user);
             var tokenOptions = _jwtHandler.GenerateTokenOptions(signingCredentials, claims);
             var token = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
-
+            
             response.status = true;
             response.item.IsAuthSuccessful = true;
             response.item.Token = token;
+            response.item.ErrorMessage = "";
             return Ok(response);
         }
 

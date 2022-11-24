@@ -9,16 +9,23 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './shared/layout/layout.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { TopbarComponent } from './shared/topbar/topbar.component';
+import { BreadcumpComponent } from './shared/breadcump/breadcump.component';
 //#endregion
 
 import { FormsModule } from '@angular/forms';
-
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    LoginComponent
+    LoginComponent,
+    LayoutComponent,
+    SidebarComponent,
+    TopbarComponent,
+    BreadcumpComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,12 @@
+F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.csproj.AssemblyReference.cache
+F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.AssemblyInfoInputs.cache
+F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.AssemblyInfo.cs
+F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.csproj.CoreCompileInputs.cache
+F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.MvcApplicationPartsAssemblyInfo.cs
+F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.MvcApplicationPartsAssemblyInfo.cache
+F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.RazorAssemblyInfo.cache
+F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.RazorAssemblyInfo.cs
 F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\appsettings.Development.json
 F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\appsettings.json
 F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\Pingu.DbApi.staticwebassets.runtime.json
@@ -40,6 +49,7 @@ F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\Microsoft.IdentityModel.Proto
 F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\Newtonsoft.Json.dll
+F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\Npgsql.dll
 F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\System.CodeDom.dll
@@ -66,15 +76,11 @@ F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\Pingu.Services.dll
 F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\Pingu.Config.pdb
 F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\Pingu.Entities.pdb
 F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\Pingu.Services.pdb
-F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.csproj.AssemblyReference.cache
-F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.GeneratedMSBuildEditorConfig.editorconfig
-F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.AssemblyInfoInputs.cache
-F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.AssemblyInfo.cs
-F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.csproj.CoreCompileInputs.cache
-F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.MvcApplicationPartsAssemblyInfo.cs
-F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.MvcApplicationPartsAssemblyInfo.cache
-F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.RazorAssemblyInfo.cache
-F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.RazorAssemblyInfo.cs
+F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\staticwebassets\msbuild.Pingu.DbApi.Microsoft.AspNetCore.StaticWebAssets.props
+F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\staticwebassets\msbuild.build.Pingu.DbApi.props
+F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Pingu.DbApi.props
+F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Pingu.DbApi.props
+F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\staticwebassets.pack.json
 F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\staticwebassets.build.json
 F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\staticwebassets.development.json
 F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
@@ -86,4 +92,3 @@ F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\refint\Pingu.DbApi.dll
 F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.pdb
 F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.genruntimeconfig.cache
 F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\ref\Pingu.DbApi.dll
-F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

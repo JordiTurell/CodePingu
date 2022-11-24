@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { LoginService } from "./../../services/login.service";
 
 @Component({
   selector: 'app-login',
@@ -11,9 +12,16 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
 
-  constructor() { }
+  constructor(public loginservice: LoginService) { }
 
-  login(f: NgForm) {
-    console.log(f.value);
+  async login(f: NgForm) {
+    
+    const usuariovalido = await this.loginservice.login(f.value.username, f.value.pass);
+
+    if (usuariovalido) {
+
+    } else {
+    
+    }
   }
 }

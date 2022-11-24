@@ -4,17 +4,31 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using Pingu.Config.Concrete;
+using Pingu.Config.Config;
 using Pingu.DbApi;
 using Pingu.DbApi.Models;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// PostgresSQL
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));
 
+//Configuracion CROS DOMAIN
+string SpecificOrigins = "Policy";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: SpecificOrigins,
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200").AllowAnyHeader()
+                                                  .AllowAnyMethod(); 
+        });
+});
+
+//Configuracion JWT
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 builder.Services.AddAuthentication(opt =>
 {
@@ -64,6 +78,7 @@ builder.Services.AddAuthentication(opt =>
     };
 });
 
+//Configuracion General
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
@@ -84,6 +99,8 @@ builder.Services.RegisterRepos();
 
 
 var app = builder.Build();
+
+app.UseCors(SpecificOrigins);
 
 
 // Configure the HTTP request pipeline.
