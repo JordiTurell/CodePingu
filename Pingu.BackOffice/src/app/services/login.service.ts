@@ -16,7 +16,7 @@ export class LoginService {
   token: string | null = null;
   autentificado: boolean = false;
 
-  constructor(private http: HttpClient, private router : Router) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   login(user: string, pass: string) {
     let data: RequestItem<UserVM> = {
@@ -39,8 +39,6 @@ export class LoginService {
   }
 
   validatetoken() {
-    this.token = localStorage.getItem('token')
-
     let data: RequestItem<String> = {
       item: (this.token != null) ? this.token : ''
     };
@@ -53,20 +51,20 @@ export class LoginService {
           resolve(false)
           this.logout();
         }
-      })
-    })
+      });
+    });
   }
+
 
   guardartoken(token: string) {
     this.token = token;
     this.autentificado = true;
-    localStorage.setItem("token", token)
     this.router.navigateByUrl('home')
   }
 
   logout() {
     this.token = null;
     this.autentificado = false;
-    this.router.navigateByUrl('login')
+    this.router.navigateByUrl('login');
   }
 }

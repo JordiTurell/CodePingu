@@ -27,8 +27,17 @@ namespace Pingu.DbApi.Controllers
         public async Task<IActionResult> ValidateToken([FromBody] RequestItem<string> token)
         {
             JwtSecurityToken t = new JwtSecurityTokenHandler().ReadJwtToken(token.item);
-            var a = t;
-            return Ok(t);
+            var user = await _userManager.FindByNameAsync(t.Claims.FirstOrDefault().Value);
+            if(user != null)
+            {
+                ResponseItem<string> request = new ResponseItem<string> {
+                    item = token.item,
+                    status = true,
+                    message = ""
+                };
+                return Ok(request);
+            }
+            return BadRequest();
         }
 
         [Route("Acceso")]

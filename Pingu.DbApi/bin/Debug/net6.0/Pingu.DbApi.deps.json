@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Pingu.DbApi/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.11",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.11",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.11",
           "Microsoft.AspNetCore.Identity.UI": "6.0.11",

@@ -238,7 +238,7 @@ namespace Pingu.Config.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Lenguajes");
+                    b.ToTable("Lenguajes", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
