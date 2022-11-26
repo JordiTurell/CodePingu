@@ -21,7 +21,7 @@ export class LoginComponent {
     let token: string | null = localStorage.getItem('token')
     if (token != null) {
       this.loginservice.guardartoken(token)
-      this.router.navigate(['/home'])
+      this.router.navigate(['/dashboard/home'])
     }
   }
 
@@ -35,7 +35,7 @@ export class LoginComponent {
           localStorage.setItem('token', this.loginservice.token)
         }
       }
-      this.router.navigate(['/home'])
+      this.router.navigate(['/dashboard/home'])
     } else {
       this.router.navigate(['/login'])
     }

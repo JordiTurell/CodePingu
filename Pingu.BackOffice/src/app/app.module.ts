@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
+import { PerfilComponent} from './components/perfil/perfil.component';
+
 import { LayoutComponent } from './shared/layout/layout.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { TopbarComponent } from './shared/topbar/topbar.component';
@@ -24,13 +26,17 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
+    /* Pages */
     AppComponent,
     InicioComponent,
     LoginComponent,
+    PerfilComponent,
     LayoutComponent,
+    /* shared */
     SidebarComponent,
     TopbarComponent,
     BreadcumpComponent,
+    /* Modals */
     ModalLoadingComponent
   ],
   imports: [
