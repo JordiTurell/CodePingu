@@ -7,9 +7,10 @@ import { LayoutComponent } from './shared/layout/layout.component';
 
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
   { path: 'home', component: InicioComponent, canActivate: [ LoginGuard ] },
-  { path: 'content', component: LayoutComponent, canActivate: [LoginGuard] }
+  { path: 'content', component: LayoutComponent, canActivate: [LoginGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo:'/login', pathMatch: 'full' },
 ];
 
 @NgModule({

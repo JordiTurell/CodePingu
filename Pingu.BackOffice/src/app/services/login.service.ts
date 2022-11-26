@@ -59,12 +59,15 @@ export class LoginService {
   guardartoken(token: string) {
     this.token = token;
     this.autentificado = true;
-    this.router.navigateByUrl('home')
   }
 
   logout() {
     this.token = null;
     this.autentificado = false;
-    this.router.navigateByUrl('login');
+    this.router.navigate(['/login'])
+    let t: string | null = localStorage.getItem('token')
+    if (t != null) {
+      localStorage.removeItem('token')
+    }
   }
 }

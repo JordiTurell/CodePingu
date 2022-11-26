@@ -15,7 +15,12 @@ import { TopbarComponent } from './shared/topbar/topbar.component';
 import { BreadcumpComponent } from './shared/breadcump/breadcump.component';
 //#endregion
 
+//#region Modals
+import { ModalLoadingComponent } from './shared/Modals/loading/loading.component';
+//#endregion
+
 import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     LayoutComponent,
     SidebarComponent,
     TopbarComponent,
-    BreadcumpComponent
+    BreadcumpComponent,
+    ModalLoadingComponent
   ],
   imports: [
     BrowserModule,
