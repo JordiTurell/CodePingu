@@ -10,7 +10,8 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
 import { PerfilComponent} from './components/perfil/perfil.component';
-
+import { ClasesComponent } from './components/clases/clases.component';
+import { CreateEditClasesComponent } from './components/clases/create-edit-clases/create-edit-clases.component';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { TopbarComponent } from './shared/topbar/topbar.component';
@@ -21,8 +22,12 @@ import { BreadcumpComponent } from './shared/breadcump/breadcump.component';
 import { ModalLoadingComponent } from './shared/Modals/loading/loading.component';
 //#endregion
 
-import { FormsModule } from '@angular/forms';
+//#region Angular Material
 
+//#endregion
+
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,12 +37,14 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     PerfilComponent,
     LayoutComponent,
+    ClasesComponent,
+    CreateEditClasesComponent,
     /* shared */
     SidebarComponent,
     TopbarComponent,
     BreadcumpComponent,
     /* Modals */
-    ModalLoadingComponent
+    ModalLoadingComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,9 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Pingu.DbApi.Models
+namespace Pingu.Services.Utils
 {
     public class RequestItem<T>
     {
-        [Required(ErrorMessage="Pasar el objeto que se necesita")]
+        [Required(ErrorMessage = "Pasar el objeto que se necesita")]
         public T item { get; set; }
     }
 }

@@ -11,4 +11,10 @@
     <Folder Include="src\environment\" />
     <Folder Include="src\sass\" />
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptConfiguration Remove="src\app\components\NewFolder\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\app\components\NewFolder\**" />
+  </ItemGroup>
 </Project>

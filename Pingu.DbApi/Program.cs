@@ -7,6 +7,7 @@ using Pingu.Config.Concrete;
 using Pingu.Config.Config;
 using Pingu.DbApi;
 using Pingu.DbApi.Models;
+using Pingu.Services.Utils;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);

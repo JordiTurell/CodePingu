@@ -226,19 +226,19 @@ namespace Pingu.Config.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("Pingu.Entities.Lenguajes", b =>
+            modelBuilder.Entity("Pingu.Entities.Clases", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<string>("Lenguaje")
+                    b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Lenguajes", (string)null);
+                    b.ToTable("Clases");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

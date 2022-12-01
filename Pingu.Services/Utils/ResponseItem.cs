@@ -1,4 +1,4 @@
-﻿namespace Pingu.DbApi.Models
+﻿namespace Pingu.Services.Utils
 {
     public class ResponseItem<T>
     {

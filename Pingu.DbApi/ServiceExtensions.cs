@@ -3,7 +3,7 @@ using Pingu.Config.Abstract;
 using Pingu.Config.Concrete;
 using Pingu.DbApi.JwtFeatures;
 using Pingu.Entities;
-using Pingu.Services.Lenguajes;
+using Pingu.Services.Clases;
 
 namespace Pingu.DbApi
 {
@@ -17,6 +17,7 @@ namespace Pingu.DbApi
         public static void Interface(IServiceCollection collection)
         {
             collection.AddScoped<JwtHandler>();
+            collection.AddScoped<IJWTService, JWTService>();
             collection.AddScoped<ILenguajesServices, LenguajesServices>();
         }
         public static void RegisterRepos(this IServiceCollection collection)

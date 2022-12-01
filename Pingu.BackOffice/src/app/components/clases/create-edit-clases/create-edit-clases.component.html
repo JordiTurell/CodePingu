@@ -1,0 +1,21 @@
+<!-- PAGE CONTENT WRAPPER -->
+<div *ngIf="loginservice.autentificado" class="page-content-wrap">
+
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <form method="post" (ngSubmit)="Submit(f)" #f="ngForm">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+              <span id="nombreerror" class="text-danger"></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- END PAGE CONTENT WRAPPER -->

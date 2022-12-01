@@ -42,6 +42,14 @@ export class LoginService {
     let data: RequestItem<String> = {
       item: (this.token != null) ? this.token : ''
     };
+
+    if (data.item == undefined || data.item == '') {
+      this.token = localStorage.getItem('token')
+      if (this.token != null) {
+        data.item = this.token;
+      }
+    }
+
     return new Promise(resolve => {
       this.http.post(`${url}/api/Login/ValidateToken`, data).subscribe((res: any) => {
         if (res.status) {
@@ -59,6 +67,7 @@ export class LoginService {
   guardartoken(token: string) {
     this.token = token;
     this.autentificado = true;
+    localStorage.setItem('token', token)
   }
 
   logout() {

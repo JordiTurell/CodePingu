@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ClasesComponent } from './components/clases/clases.component';
+import { CreateEditClasesComponent } from './components/clases/create-edit-clases/create-edit-clases.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
@@ -13,6 +15,11 @@ const routes: Routes = [
     children: [
       { path: 'perfil', component: PerfilComponent, canActivate: [LoginGuard] },
       { path: 'home', component: InicioComponent, canActivate: [LoginGuard] },
+      {
+        path: 'clases', component: ClasesComponent, canActivate: [LoginGuard], children: [
+          { path: 'create', component: CreateEditClasesComponent, canActivate: [LoginGuard] },
+          { path: 'edit', component: CreateEditClasesComponent, canActivate: [LoginGuard] },    
+        ] },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ]
   },

@@ -11,6 +11,6 @@ namespace Pingu.Entities
     {
         [Key]
         public Guid Id { get; set; }
-        public string Lenguaje { get; set; } = "";
+        public string Nombre { get; set; } = "";
     }
 }

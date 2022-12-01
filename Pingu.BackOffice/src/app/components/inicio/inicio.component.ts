@@ -3,7 +3,8 @@ import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-inicio',
-  templateUrl: './inicio.component.html'
+  templateUrl: './inicio.component.html',
+  styleUrls: ['./inicio.component.scss']
 })
 export class InicioComponent {
   constructor(public loginservice: LoginService) { }
