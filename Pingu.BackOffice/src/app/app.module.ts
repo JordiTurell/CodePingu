@@ -10,12 +10,16 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
 import { PerfilComponent} from './components/perfil/perfil.component';
-import { ClasesComponent } from './components/clases/clases.component';
-import { CreateEditClasesComponent } from './components/clases/create-edit-clases/create-edit-clases.component';
+import { LenguajesComponent } from './components/lenguajes/lenguajes.component';
+import { CreateEditLenguajesComponent } from './components/lenguajes/create-edit-lenguajes/create-edit-lenguajes.component';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { TopbarComponent } from './shared/topbar/topbar.component';
 import { BreadcumpComponent } from './shared/breadcump/breadcump.component';
+//#endregion
+
+//#region Utils
+import { TablasComponent } from './components/Utils/tablas/tablas.component';
 //#endregion
 
 //#region Modals
@@ -23,7 +27,7 @@ import { ModalLoadingComponent } from './shared/Modals/loading/loading.component
 //#endregion
 
 //#region Angular Material
-
+import { AgGridModule } from 'ag-grid-angular';
 //#endregion
 
 import { FormsModule } from '@angular/forms';
@@ -37,12 +41,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     PerfilComponent,
     LayoutComponent,
-    ClasesComponent,
-    CreateEditClasesComponent,
+    LenguajesComponent,
+    CreateEditLenguajesComponent,
     /* shared */
     SidebarComponent,
     TopbarComponent,
     BreadcumpComponent,
+    TablasComponent,
     /* Modals */
     ModalLoadingComponent,
   ],
@@ -54,7 +59,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    
+    AgGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]

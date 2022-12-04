@@ -1,0 +1,19 @@
+<!-- PAGE CONTENT WRAPPER -->
+<div *ngIf="loginservice.autentificado" class="page-content-wrap">
+  <div class="row">
+    <div class="col-lg-12 mt-10">
+      <div class="btn-group mr-2" role="group" aria-label="...">
+        <button type="button" class="btn btn-outline-secondary btn-icon" title="Crear" (click)="CreateLoad()" ><i class="fa fa-file"></i></button>
+        <button type="button" class="btn btn-outline-secondary btn-icon" title="Editar" (click)="EditLoad()" disabled><i class="fa fa-pencil-alt"></i></button>
+        <button type="button" class="btn btn-outline-secondary btn-icon" title="Eliminar" id="delete" disabled><i class="fa fa-trash"></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <app-tablas [columnDefs]="columns" [rowData]="data" ></app-tablas>
+    </div>
+  </div>
+  <app-loading></app-loading>
+</div>
+<!-- END PAGE CONTENT WRAPPER -->

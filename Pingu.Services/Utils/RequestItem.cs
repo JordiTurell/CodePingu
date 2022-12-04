@@ -6,5 +6,8 @@ namespace Pingu.Services.Utils
     {
         [Required(ErrorMessage = "Pasar el objeto que se necesita")]
         public T item { get; set; }
+        
+        [Required]
+        public string token { get; set; }
     }
 }

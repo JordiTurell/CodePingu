@@ -22,6 +22,6 @@ namespace Pingu.Config.Concrete
            : base(options) {
         }
 
-        public DbSet<Lenguajes> Clases { get; set; }
+        public DbSet<Lenguajes> Lenguajes { get; set; }
     }
 }

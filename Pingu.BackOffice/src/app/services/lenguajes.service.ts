@@ -16,22 +16,23 @@ export class LenguajesServices {
 
   constructor(private loginservice: LoginService, private http: HttpClient, private router: Router) {
   }
-
-  GetList() {
-    let data: RequestList<LenguajesVM> = {
-      customdata: [],
-      token: (this.loginservice.token != null) ? this.loginservice.token : '',
-      items: 25,
-      page: 0
-    };
-    return new Promise(resolve => {
-      this.http.post(`${url}/api/Clases/GetClases`, data).subscribe((res: any) => {
-        if (res.status) {
-          resolve(true)
-        } else {
-          resolve(false)
-        }
-      })
-    })
-  }
+  //No se usa pq lo usa el componente de tabla pasando directament la url
+  //GetList() {
+  //  let data: RequestList<LenguajesVM> = {
+  //    customdata: [],
+  //    token: (this.loginservice.token != null) ? this.loginservice.token : '',
+  //    items: 25,
+  //    page: 0
+  //  };
+  //  return new Promise(resolve => {
+  //    this.http.post(`${url}/api/Clases/GetClases`, data).subscribe((res: any) => {
+  //      if (res.status) {
+  //        resolve(true)
+  //      } else {
+  //        resolve(false)
+  //      }
+  //      return res.list
+  //    })
+  //  })
+  //}
 }

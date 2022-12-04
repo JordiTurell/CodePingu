@@ -20,12 +20,39 @@ namespace Pingu.DbApi.Controllers
 
         [Route("GetClases")]
         [HttpPost]
-        public async Task<ResponseList<Entities.Lenguajes>> GetClases([FromBody] RequestList<Entities.Lenguajes> request)
+        public async Task<IQueryable<Entities.Lenguajes>> GetClases([FromBody] RequestList<Entities.Lenguajes> request)
         {
             ResponseList<Entities.Lenguajes> response = new ResponseList<Entities.Lenguajes>();
             if (await _Jwt.ValidatedTokenRequest(request.token))
             {
-                response.customdata = _service.GetList(request);
+                return _service.GetList(request);
+                
+            }
+            return null;
+        }
+
+        [Route("SetClases")]
+        [HttpPost]
+        public async Task<ResponseItem<Entities.Lenguajes>> SetLenguaje([FromBody] RequestItem<Entities.Lenguajes> request)
+        {
+            ResponseItem<Entities.Lenguajes> response = new ResponseItem<Entities.Lenguajes>();
+            if(await _Jwt.ValidatedTokenRequest(request.token))
+            {
+                response.item = await _service.Create(request.item);
+                response.status = true;
+                response.message = request.token;
+            }
+            return response;
+        }
+
+        [Route("EditClases")]
+        [HttpPost]
+        public async Task<ResponseItem<Entities.Lenguajes>> EditLenguaje([FromBody] RequestItem<Entities.Lenguajes> request)
+        {
+            ResponseItem<Entities.Lenguajes> response = new ResponseItem<Entities.Lenguajes>();
+            if (await _Jwt.ValidatedTokenRequest(request.token))
+            {
+                response.item = await _service.Edit(request.item);
                 response.status = true;
                 response.message = request.token;
             }

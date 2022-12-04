@@ -23,7 +23,8 @@ export class LoginService {
       item: {
         user: user,
         password: pass
-      }
+      },
+      token: 'a'
     };
     return new Promise(resolve => {
       this.http.post(`${url}/api/Login/Acceso`, data).subscribe((res: any) => {
@@ -40,7 +41,8 @@ export class LoginService {
 
   validatetoken() {
     let data: RequestItem<String> = {
-      item: (this.token != null) ? this.token : ''
+      item: (this.token != null) ? this.token : '',
+      token : 'a'
     };
 
     if (data.item == undefined || data.item == '') {
@@ -53,7 +55,7 @@ export class LoginService {
     return new Promise(resolve => {
       this.http.post(`${url}/api/Login/ValidateToken`, data).subscribe((res: any) => {
         if (res.status) {
-          this.guardartoken(res.item.token)
+          this.guardartoken(res.item)
           resolve(true)
         } else {
           resolve(false)

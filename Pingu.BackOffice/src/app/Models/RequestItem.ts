@@ -1,5 +1,6 @@
 export interface RequestItem<T> {
-  item: T;
+  item: T,
+  token: string | null
 }
 
 

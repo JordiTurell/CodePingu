@@ -226,7 +226,7 @@ namespace Pingu.Config.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("Pingu.Entities.Clases", b =>
+            modelBuilder.Entity("Pingu.Entities.Lenguajes", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -238,7 +238,7 @@ namespace Pingu.Config.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clases");
+                    b.ToTable("Lenguajes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

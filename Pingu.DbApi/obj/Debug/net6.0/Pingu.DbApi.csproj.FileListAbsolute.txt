@@ -92,3 +92,5 @@ F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\refint\Pingu.DbApi.dll
 F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.pdb
 F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\Pingu.DbApi.genruntimeconfig.cache
 F:\Projects\CodePingu\Pingu.DbApi\obj\Debug\net6.0\ref\Pingu.DbApi.dll
+F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\package-lock.json
+F:\Projects\CodePingu\Pingu.DbApi\bin\Debug\net6.0\package.json

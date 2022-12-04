@@ -1,11 +1,26 @@
-.page-content-wrap{
-    margin-left:50px;
-    padding:20px;
-}
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.table{
-    width:100%;
+.page-content-wrap {
+  margin-left: 50px;
+  padding: 20px;
+}
+
+.ag-header-container {
+  width: 100% !important;
+
+  .ag-header-row.ag-header-row-column {
+    width: 100% !important;
+  }
+}
+
+.ag-center-cols-viewport{
+    width:100% !important;
+}
+
+.mt-10{
+    margin-top:10px;
 }
