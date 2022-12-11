@@ -1,9 +1,11 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ColDef } from 'ag-grid-community';
+import { Guid } from 'guid-typescript';
 import { Observable } from 'rxjs';
-import { LenguajesVM } from '../../Models/LenguajesVM';
-import { ResponseList } from '../../Models/ResponseList';
+import { ILenguajesVM } from '../../Models/LenguajesVM/ILenguajesVM';
+import { LenguajesVM } from '../../Models/LenguajesVM/LenguajesVM';
+import { RequestItem } from '../../Models/RequestItem';
 import { LenguajesServices } from '../../services/lenguajes.service';
 import { LoginService } from '../../services/login.service';
 
@@ -21,10 +23,10 @@ export class LenguajesComponent implements AfterViewInit{
     { field: 'id' },
     { field: 'nombre' }
   ];
-  public data!: Observable<LenguajesVM[]>;
+  public data!: Observable<ILenguajesVM[]>;
     
   constructor(public loginservice: LoginService, private router : Router, private lenguajesservices : LenguajesServices) {
-
+    this.router.onSameUrlNavigation = 'reload'
   }
 
   async ngAfterViewInit(): Promise<void> {
@@ -36,6 +38,14 @@ export class LenguajesComponent implements AfterViewInit{
   }
 
   EditLoad() {
+    this.idClase = $('#edit').data('id')
     this.router.navigate(['/dashboard/lenguajes/edit/'+ this.idClase ])
+  }
+
+  Delete() {
+    this.idClase = $('#delete').data('id')
+    this.lenguajesservices.Delete($('#delete').data('obj'));
+    window.location.reload();
+    this.router.navigate(['/dashboard/lenguajes'])
   }
 }

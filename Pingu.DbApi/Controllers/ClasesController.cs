@@ -31,6 +31,20 @@ namespace Pingu.DbApi.Controllers
             return null;
         }
 
+        [Route("GetItem")]
+        [HttpPost]
+        public async Task<ResponseItem<Entities.Lenguajes>> GetClase([FromBody] RequestItem<Entities.Lenguajes> request)
+        {
+            ResponseItem<Entities.Lenguajes> response = new ResponseItem<Entities.Lenguajes>();
+            if (await _Jwt.ValidatedTokenRequest(request.token))
+            {
+                response.item = await _service.GetItem(request.item);
+                response.status = true;
+                response.message = request.token;
+            }
+            return response;
+        }
+
         [Route("SetClases")]
         [HttpPost]
         public async Task<ResponseItem<Entities.Lenguajes>> SetLenguaje([FromBody] RequestItem<Entities.Lenguajes> request)
@@ -53,6 +67,20 @@ namespace Pingu.DbApi.Controllers
             if (await _Jwt.ValidatedTokenRequest(request.token))
             {
                 response.item = await _service.Edit(request.item);
+                response.status = true;
+                response.message = request.token;
+            }
+            return response;
+        }
+
+        [Route("DeleteClases")]
+        [HttpPost]
+        public async Task<ResponseItem<Entities.Lenguajes>> DeleteLenguaje([FromBody] RequestItem<Entities.Lenguajes> request)
+        {
+            ResponseItem<Entities.Lenguajes> response = new ResponseItem<Entities.Lenguajes>();
+            if (await _Jwt.ValidatedTokenRequest(request.token))
+            {
+                await _service.Delete(request.item);
                 response.status = true;
                 response.message = request.token;
             }

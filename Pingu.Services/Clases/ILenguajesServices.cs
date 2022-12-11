@@ -8,5 +8,7 @@ namespace Pingu.Services.Clases
         IQueryable<Lenguajes> GetList(RequestList<Lenguajes> request);
         Task<Lenguajes> Create(Lenguajes request);
         Task<Lenguajes?> Edit(Lenguajes item);
+        Task Delete(Lenguajes item);
+        Task<Lenguajes?> GetItem(Lenguajes item);
     }
 }

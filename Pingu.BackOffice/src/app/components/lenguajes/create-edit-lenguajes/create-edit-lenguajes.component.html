@@ -1,10 +1,10 @@
 <!-- PAGE CONTENT WRAPPER -->
-<div *ngIf="loginservice.autentificado" class="page-content-wrap mt-10">
+<form *ngIf="loginservice.autentificado" class="page-content-wrap mt-10" (ngSubmit)="Save()" [formGroup]="lenguajesform" role="form">  
   <div class="row mt-10">
     <div class="col-lg-12">
       <div class="btn-group mr-2" role="group" aria-label="...">
         <button type="button" class="btn btn-outline-secondary btn-icon" (click)="Atras()" title="Atrás"><i class="fa fa-angle-double-left"></i></button>
-        <button type="button" class="btn btn-outline-secondary btn-icon" (click)="Save()" title="Guardar"><i class="fa fa-save"></i></button>
+        <button type="submit" [disabled]="lenguajesform.invalid" class="btn btn-outline-secondary btn-icon" title="Guardar"><i class="fa fa-save"></i></button>
       </div>
     </div>
   </div>
@@ -12,18 +12,19 @@
     <div class="col-lg-4">
       <div class="card">
         <div class="card-body">
-          <form method="post" (ngSubmit)="Submit(f)" #f="ngForm">
-            <div class="form-group">
-              <label for="nombre">Nombre</label>
-              <input type="text" class="form-control" id="nombre" placeholder="Nombre">
-              <span id="nombreerror" class="text-danger"></span>
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre" />
+            <div class="alert-danger" *ngIf="lenguajesform.controls['nombre'].invalid && lenguajesform.controls['nombre'].touched">
+              <div class="container-error-message">
+                *Campo requerido
+              </div>              
             </div>
-            <input type="hidden" name="id" value="0" />
-          </form>
+          </div>
+          <input type="hidden" formControlName="id" value="0" />
         </div>
       </div>
     </div>
   </div>
-
-</div>
+</form>
 <!-- END PAGE CONTENT WRAPPER -->

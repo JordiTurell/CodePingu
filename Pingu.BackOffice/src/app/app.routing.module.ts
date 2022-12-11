@@ -17,7 +17,7 @@ const routes: Routes = [
       { path: 'home', component: InicioComponent, canActivate: [LoginGuard] },
       { path: 'lenguajes', component: LenguajesComponent, canActivate: [LoginGuard] },
       { path: 'lenguajes/create', component: CreateEditLenguajesComponent, canActivate: [LoginGuard] },
-      { path: 'lenguajes/edit', component: CreateEditLenguajesComponent, canActivate: [LoginGuard] },    
+      { path: 'lenguajes/edit/:id', component: CreateEditLenguajesComponent, canActivate: [LoginGuard] },    
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ]
   },

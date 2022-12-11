@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { RequestList } from '../Models/RequestList';
+import { Guid } from 'guid-typescript';
+
 import { environment } from "../../environment/environment";
+import { LenguajesVM } from '../Models/LenguajesVM/LenguajesVM';
+import { RequestItem } from '../Models/RequestItem';
+import { ResponseItem } from '../Models/ResponseItem';
 import { LoginService } from './login.service';
-import { LenguajesVM } from '../Models/LenguajesVM';
-import { ResponseList } from '../Models/ResponseList';
 
 const url = environment.api;
 
@@ -16,23 +18,72 @@ export class LenguajesServices {
 
   constructor(private loginservice: LoginService, private http: HttpClient, private router: Router) {
   }
-  //No se usa pq lo usa el componente de tabla pasando directament la url
-  //GetList() {
-  //  let data: RequestList<LenguajesVM> = {
-  //    customdata: [],
-  //    token: (this.loginservice.token != null) ? this.loginservice.token : '',
-  //    items: 25,
-  //    page: 0
-  //  };
-  //  return new Promise(resolve => {
-  //    this.http.post(`${url}/api/Clases/GetClases`, data).subscribe((res: any) => {
-  //      if (res.status) {
-  //        resolve(true)
-  //      } else {
-  //        resolve(false)
-  //      }
-  //      return res.list
-  //    })
-  //  })
-  //}
+
+  Create(item: LenguajesVM) {
+    item.id = Guid.create().toJSON().value
+     let data: RequestItem<LenguajesVM> = {
+        item: item,
+        token: (this.loginservice.token != null) ? this.loginservice.token : '',
+     };
+     return new Promise(resolve => {
+        this.http.post(`${url}/api/Clases/SetClases`, data).subscribe((res: any) => {
+        if (res.status) {
+          resolve(true)
+        } else {
+          resolve(false)
+        }
+          this.router.navigate(['/dashboard/lenguajes'])
+      })
+     })
+  }
+
+  Edit(item: LenguajesVM) {
+    let data: RequestItem<LenguajesVM> = {
+      item: item,
+      token: (this.loginservice.token != null) ? this.loginservice.token : '',
+    };
+    return new Promise(resolve => {
+      this.http.post(`${url}/api/Clases/EditClases`, data).subscribe((res: any) => {
+        if (res.status) {
+          resolve(true)
+        } else {
+          resolve(false)
+        }
+        this.router.navigate(['/dashboard/lenguajes'])
+      })
+    })
+  }
+
+  Delete(item: LenguajesVM){
+    let data: RequestItem<LenguajesVM> = {
+      item: item,
+      token: (this.loginservice.token != null) ? this.loginservice.token : '',
+    };
+    return new Promise(resolve => {
+      this.http.post(`${url}/api/Clases/DeleteClases`, data).subscribe((res: any) => {
+        if (res.status) {
+          resolve(true)
+        } else {
+          resolve(false)
+        }
+        this.router.navigate(['/dashboard/lenguajes'])
+      })
+    })
+  }
+
+  async Get(item: LenguajesVM){
+    let data: RequestItem<LenguajesVM> = {
+      item: item,
+      token: (this.loginservice.token != null) ? this.loginservice.token : '',
+    };
+    return new Promise(resolve => {
+      this.http.post(`${url}/api/Clases/GetItem`, data).subscribe((res: any) => {
+        if (res.status) {
+            resolve(res)
+        } else {
+          resolve(false)
+        }
+      })
+    })
+  }
 }

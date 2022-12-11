@@ -4,12 +4,11 @@ import { AgGridAngular } from 'ag-grid-angular';
 import { CellClickedEvent, ColDef, GridReadyEvent } from 'ag-grid-community';
 import { Observable } from 'rxjs';
 import { environment } from '../../../../environment/environment';
-import { LenguajesVM } from '../../../Models/LenguajesVM';
 import { RequestList } from '../../../Models/RequestList';
-import { ResponseList } from '../../../Models/ResponseList';
 import { LoginService } from '../../../services/login.service';
 
 const url = environment.api
+declare var $: any;
 
 @Component({
   selector: 'app-tablas',
@@ -52,7 +51,13 @@ export class TablasComponent {
 
   // Example of consuming Grid Event
   onCellClicked(e: CellClickedEvent): void {
-    console.log('cellClicked', e);
+    let id = e.data.id
+    $('#delete').prop('disabled', false)
+    $('#delete').data('id', id)
+    $('#delete').data('obj', e.data)
+    $('#edit').prop('disabled', false)
+    $('#edit').data('id', id)
+    $('#edit').data('obj', e.data)
   }
 
   // Example using Grid's API

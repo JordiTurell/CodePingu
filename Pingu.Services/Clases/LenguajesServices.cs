@@ -16,7 +16,12 @@ namespace Pingu.Services.Clases
 
         public IQueryable<Lenguajes> GetList(RequestList<Lenguajes> request)
         {
-            return (from d in _clasesRepository.GetDbSet() select d);
+            return (from d in _clasesRepository.GetDbSet() orderby d.Nombre select d);
+        }
+
+        public async Task<Lenguajes> GetItem(Lenguajes item)
+        {
+            return (from d in _clasesRepository.GetDbSet() where d.Id == item.Id select d).FirstOrDefault();
         }
 
         public async Task<Lenguajes> Create(Lenguajes request)
@@ -28,12 +33,22 @@ namespace Pingu.Services.Clases
         public async Task<Lenguajes?> Edit(Lenguajes item)
         {
             Lenguajes? l = (from d in _clasesRepository.GetDbSet() where d.Id == item.Id select d).FirstOrDefault();
-            if (l == null)
+            if (l != null)
             {
-                await _clasesRepository.EditAsync(item);
+                l.Nombre = item.Nombre;
+                await _clasesRepository.EditAsync(l);
                 return item;
             }
             return null;
+        }
+
+        public async Task Delete(Lenguajes item)
+        {
+            Lenguajes? delete = (from d in _clasesRepository.GetDbSet() where d.Id == item.Id select d).FirstOrDefault();
+            if (delete != null)
+            {
+                await _clasesRepository.DeleteAsync(delete);
+            }
         }
     }
 }
