@@ -226,6 +226,42 @@ namespace Pingu.Config.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("Pingu.Entities.Apuntes", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("IdLenguajes")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Post")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<bool>("avilitado")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("puntuacion")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("visitas")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdLenguajes");
+
+                    b.ToTable("Apuntes");
+                });
+
             modelBuilder.Entity("Pingu.Entities.Lenguajes", b =>
                 {
                     b.Property<Guid>("Id")
@@ -290,6 +326,17 @@ namespace Pingu.Config.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Pingu.Entities.Apuntes", b =>
+                {
+                    b.HasOne("Pingu.Entities.Lenguajes", "Lenguajes")
+                        .WithMany()
+                        .HasForeignKey("IdLenguajes")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Lenguajes");
                 });
 #pragma warning restore 612, 618
         }

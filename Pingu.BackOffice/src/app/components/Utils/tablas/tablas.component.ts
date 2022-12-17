@@ -16,8 +16,10 @@ declare var $: any;
   styleUrls: ['./tablas.component.scss']
 })
 export class TablasComponent {
+  @Input()
+  public url!: string
 
-  public api! : string
+  public urlapi! : string
 
   //Columnas predeterminadas
   @Input()
@@ -39,14 +41,14 @@ export class TablasComponent {
   constructor(private loginservice: LoginService, private http: HttpClient) { }
 
   // Example load data from sever
-  onGridReady(params: GridReadyEvent, api: string) {
+  onGridReady(params: GridReadyEvent) {
     let data: RequestList<Object> = {
       customdata: [],
       token: (this.loginservice.token != null) ? this.loginservice.token : '',
       items: 25,
       page: 0
     };
-    this.rowData = this.http.post<any>(`${url}/api/${api}`, data)
+    this.rowData = this.http.post<any>(`${url}/api/${this.url}`, data)
   }
 
   // Example of consuming Grid Event

@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Guid } from 'guid-typescript';
+import { Observable } from 'rxjs';
 
 import { environment } from "../../environment/environment";
 import { LenguajesVM } from '../Models/LenguajesVM/LenguajesVM';
 import { RequestItem } from '../Models/RequestItem';
-import { ResponseItem } from '../Models/ResponseItem';
+import { RequestList } from '../Models/RequestList';
 import { LoginService } from './login.service';
 
 const url = environment.api;
@@ -67,6 +68,20 @@ export class LenguajesServices {
           resolve(false)
         }
         this.router.navigate(['/dashboard/lenguajes'])
+      })
+    })
+  }
+
+  public ListLenguajes(): Observable<any[]> {
+    let data: RequestList<LenguajesVM> = {
+      customdata: [],
+      items: 0,
+      page: 0,
+      token: (this.loginservice.token != null) ? this.loginservice.token : ''
+    }
+    return new Observable(observer => {
+      this.http.post(`${url}/api/Clases/GetClases`, data).subscribe((res: any) => {
+        observer = res;
       })
     })
   }

@@ -8,6 +8,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="src\app\guards\" />
+    <Folder Include="src\app\Models\ApuntesVM\" />
     <Folder Include="src\environment\" />
     <Folder Include="src\sass\" />
   </ItemGroup>

@@ -23,5 +23,6 @@ namespace Pingu.Config.Concrete
         }
 
         public DbSet<Lenguajes> Lenguajes { get; set; }
+        public DbSet<Apuntes> Apuntes { get; set; }
     }
 }

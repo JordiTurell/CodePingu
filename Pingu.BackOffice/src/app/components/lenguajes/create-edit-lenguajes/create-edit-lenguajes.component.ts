@@ -58,7 +58,7 @@ export class CreateEditLenguajesComponent {
   }
 
   Atras() {
-
+    window.history.back()
   }
 
   async Save() {

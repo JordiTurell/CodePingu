@@ -16,6 +16,7 @@ import { LayoutComponent } from './shared/layout/layout.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { TopbarComponent } from './shared/topbar/topbar.component';
 import { BreadcumpComponent } from './shared/breadcump/breadcump.component';
+import { ApuntesComponent } from './components/apuntes/apuntes.component';
 //#endregion
 
 //#region Utils
@@ -43,6 +44,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LayoutComponent,
     LenguajesComponent,
     CreateEditLenguajesComponent,
+    ApuntesComponent,
     /* shared */
     SidebarComponent,
     TopbarComponent,

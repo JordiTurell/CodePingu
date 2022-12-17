@@ -7,6 +7,8 @@ import { LoginComponent } from './components/login/login.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { LoginGuard } from './guards/login.guard';
 import { LayoutComponent } from './shared/layout/layout.component';
+import { ApuntesComponent } from './components/apuntes/apuntes.component';
+import { ApuntesCrudComponent } from './components/apuntes/apuntescrud/apuntescrud.component';
 
 
 const routes: Routes = [  
@@ -17,8 +19,11 @@ const routes: Routes = [
       { path: 'home', component: InicioComponent, canActivate: [LoginGuard] },
       { path: 'lenguajes', component: LenguajesComponent, canActivate: [LoginGuard] },
       { path: 'lenguajes/create', component: CreateEditLenguajesComponent, canActivate: [LoginGuard] },
-      { path: 'lenguajes/edit/:id', component: CreateEditLenguajesComponent, canActivate: [LoginGuard] },    
-      { path: "", redirectTo: "dashboard", pathMatch: "full" },
+      { path: 'lenguajes/edit/:id', component: CreateEditLenguajesComponent, canActivate: [LoginGuard] },
+      { path: 'apuntes', component: ApuntesComponent, canActivate: [LoginGuard] },
+      { path: 'apuntes/create', component: ApuntesCrudComponent, canActivate: [LoginGuard] },
+      { path: 'apuntes/edit/:id', component: ApuntesCrudComponent, canActivate: [LoginGuard] },
+      { path: "", component:InicioComponent, pathMatch: "full" },
     ]
   },
   { path: 'login', component: LoginComponent },

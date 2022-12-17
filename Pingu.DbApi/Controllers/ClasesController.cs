@@ -25,8 +25,7 @@ namespace Pingu.DbApi.Controllers
             ResponseList<Entities.Lenguajes> response = new ResponseList<Entities.Lenguajes>();
             if (await _Jwt.ValidatedTokenRequest(request.token))
             {
-                return _service.GetList(request);
-                
+                return _service.GetList(request);                
             }
             return null;
         }
