@@ -8,6 +8,10 @@ import { ResponseItem } from '../../../Models/ResponseItem';
 import { ApuntesService } from '../../../services/apuntes.service';
 import { LoginService } from '../../../services/login.service';
 
+import ClassicEditor from '../../../../ckeditor';
+
+declare var $: any;
+
 @Component({
   selector: 'app-apuntescrud',
   templateUrl: './apuntescrud.component.html',
@@ -27,38 +31,54 @@ export class ApuntesCrudComponent implements OnInit {
       idLenguaje: ['', Validators.required]
     })
   }
-    async ngOnInit() {
-      await this.loginservice.validatetoken()
-      this.router.params.subscribe((params: Params) => {
-        this.idEdit = params['id']
-        this.EditMode = params['id'] != null
-      })
+  async ngOnInit() {
+    await this.loginservice.validatetoken()
+    this.router.params.subscribe((params: Params) => {
+      this.idEdit = params['id']
+      this.EditMode = params['id'] != null
+    })
 
-      if (this.EditMode) {
-        let data: RequestItem<ApuntesVM> = {
-          item: {
-            titulo: this.apuntesform.controls['titulo'].value,
-            id: Guid.parse(this.idEdit).toJSON().value,
-            post: this.apuntesform.controls['post'].value,
-            idLenguajes: this.apuntesform.controls['idLenguaje'].value,
-            avilitado: false,
-            fecha: new Date(),
-            puntuacion: 0,
-            visitas: 0
-          },
-          token: (this.loginservice.token != null) ? this.loginservice.token : '',
-        }
-        const itemEdit: ResponseItem<ApuntesVM> = await this.apuntesservice.Get(data.item) as ResponseItem<ApuntesVM>
-        try {
-          this.apuntesform.get('tiutlo')?.setValue(itemEdit.item.titulo)
-          this.apuntesform.get('post')?.setValue(itemEdit.item.post)
-          this.apuntesform.get('idLenguajes')?.setValue(itemEdit.item.idLenguajes)
-          this.apuntesform.get('id')?.setValue(itemEdit.item.id)
-        } catch (ex) {
-          this.nav.navigate(['/dashboard/apuntes'])
-        }
+    if (this.EditMode) {
+      let data: RequestItem<ApuntesVM> = {
+        item: {
+          titulo: this.apuntesform.controls['titulo'].value,
+          id: Guid.parse(this.idEdit).toJSON().value,
+          post: this.apuntesform.controls['post'].value,
+          idLenguajes: this.apuntesform.controls['idLenguaje'].value,
+          avilitado: false,
+          fecha: new Date(),
+          puntuacion: 0,
+          visitas: 0
+        },
+        token: (this.loginservice.token != null) ? this.loginservice.token : '',
+      }
+      const itemEdit: ResponseItem<ApuntesVM> = await this.apuntesservice.Get(data.item) as ResponseItem<ApuntesVM>
+      try {
+        this.apuntesform.get('tiutlo')?.setValue(itemEdit.item.titulo)
+        this.apuntesform.get('post')?.setValue(itemEdit.item.post)
+        this.apuntesform.get('idLenguajes')?.setValue(itemEdit.item.idLenguajes)
+        this.apuntesform.get('id')?.setValue(itemEdit.item.id)
+      } catch (ex) {
+        this.nav.navigate(['/dashboard/apuntes'])
       }
     }
+
+  }
+
+  ngAfterContentInit() {
+    ClassicEditor['create'](document.querySelector('#post'), {
+        toolbar: {
+          items: [            
+            'findAndReplace', 'selectAll', '|',
+            'heading', '|',
+            'bold', 'italic', '|',
+            'bulletedList', 'numberedList', 'todoList', '|',
+            'undo', 'redo',
+          ]
+        },
+        language: 'es',        
+      })
+  }
 
   get f() { return this.apuntesform.controls }
 
