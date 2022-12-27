@@ -9,9 +9,9 @@ import { ApuntesService } from '../../../services/apuntes.service';
 import { LoginService } from '../../../services/login.service';
 
 @Component({
-  selector: 'app-crud',
-  templateUrl: './crud.component.html',
-  styleUrls: ['./crud.component.scss']
+  selector: 'app-apuntescrud',
+  templateUrl: './apuntescrud.component.html',
+  styleUrls: ['./apuntescrud.component.scss']
 })
 export class ApuntesCrudComponent implements OnInit {
 
@@ -66,7 +66,7 @@ export class ApuntesCrudComponent implements OnInit {
     window.history.back()
   }
 
-  async Save() {
+  Save() {
     if (this.apuntesform.valid) {
       let data: RequestItem<ApuntesVM> = {
         item: {
