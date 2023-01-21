@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pingu.Services.Models;
+using Pingu.Services.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,7 @@ namespace Pingu.Services.Usuarios
 {
     public interface IUsuariosServices
     {
-        Task CreateUser();
+        Task<UsuarioVM> Edit(RequestItem<UsuarioVM> request);
+        Task<List<UsuarioVM>> GetUsuarios();
     }
 }

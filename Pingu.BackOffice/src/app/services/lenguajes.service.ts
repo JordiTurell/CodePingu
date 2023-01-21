@@ -21,7 +21,7 @@ export class LenguajesServices {
   }
 
   Create(item: LenguajesVM) {
-    item.id = Guid.create().toJSON().value
+    item.id = Guid.create()//.toJSON().value
      let data: RequestItem<LenguajesVM> = {
         item: item,
         token: (this.loginservice.token != null) ? this.loginservice.token : '',

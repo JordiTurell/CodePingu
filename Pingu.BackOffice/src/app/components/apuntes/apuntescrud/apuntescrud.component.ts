@@ -8,9 +8,9 @@ import { ResponseItem } from '../../../Models/ResponseItem';
 import { ApuntesService } from '../../../services/apuntes.service';
 import { LoginService } from '../../../services/login.service';
 
-import ClassicEditor from '../../../../ckeditor';
-
 declare var $: any;
+declare var ClassicEditor: any;
+declare var hljs: any;
 
 @Component({
   selector: 'app-apuntescrud',
@@ -66,18 +66,10 @@ export class ApuntesCrudComponent implements OnInit {
   }
 
   ngAfterContentInit() {
-    ClassicEditor['create'](document.querySelector('#post'), {
-        toolbar: {
-          items: [            
-            'findAndReplace', 'selectAll', '|',
-            'heading', '|',
-            'bold', 'italic', '|',
-            'bulletedList', 'numberedList', 'todoList', '|',
-            'undo', 'redo',
-          ]
-        },
-        language: 'es',        
-      })
+    ClassicEditor.create(document.getElementById("post"), {
+      extraPlugins: 'codesnippet',
+      codeSnippet_theme: 'monokai_sublime'
+    });
   }
 
   get f() { return this.apuntesform.controls }

@@ -9,6 +9,10 @@
   <ItemGroup>
     <Folder Include="src\app\guards\" />
     <Folder Include="src\app\Models\ApuntesVM\" />
+    <Folder Include="src\app\Models\Usuarios\" />
+    <Folder Include="src\app\Models\RolesVM\" />
+    <Folder Include="src\assets\js\ckeditor\plugins\" />
+    <Folder Include="src\assets\js\highlight\" />
     <Folder Include="src\environment\" />
     <Folder Include="src\sass\" />
   </ItemGroup>

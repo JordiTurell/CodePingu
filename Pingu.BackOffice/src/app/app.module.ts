@@ -17,6 +17,8 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { TopbarComponent } from './shared/topbar/topbar.component';
 import { BreadcumpComponent } from './shared/breadcump/breadcump.component';
 import { ApuntesComponent } from './components/apuntes/apuntes.component';
+import { RolesComponent } from './components/roles/roles.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
 //#endregion
 
 //#region Utils
@@ -33,6 +35,7 @@ import { AgGridModule } from 'ag-grid-angular';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RolescrudComponent } from './components/roles/rolescrud/rolescrud.component';
 
 
 @NgModule({
@@ -46,6 +49,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LenguajesComponent,
     CreateEditLenguajesComponent,
     ApuntesComponent,
+    RolesComponent,
+    RolescrudComponent,
+    UsuariosComponent,
     /* shared */
     SidebarComponent,
     TopbarComponent,

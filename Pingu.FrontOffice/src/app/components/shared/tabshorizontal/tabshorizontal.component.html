@@ -1,0 +1,12 @@
+<div class="tab">
+	<div *ngFor="let item of TabsName"> 
+		<button class="tablinks" (click)="openTab($event, item.name)" id="BtnTab{{item.name}}">{{item.name}}</button>
+	</div>
+</div>
+
+<div *ngFor="let item of TabsName">
+	<div id="{{item.name}}" class="tabcontent">
+		<h3>{{item.name}}</h3>
+		<p>{{item.description}}</p>
+	</div>
+</div>

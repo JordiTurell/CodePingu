@@ -15,6 +15,8 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Pingu.BackOffice", "Pingu.B
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Pingu.FrontOffice", "Pingu.FrontOffice\Pingu.FrontOffice.esproj", "{B5E1CF56-CD06-4B81-BBC0-454102A33292}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "BotLoky", "BotLoky\BotLoky.pyproj", "{3855311F-AB6D-43CB-A7E5-A0882A9AC5BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,8 @@ Global
 		{B5E1CF56-CD06-4B81-BBC0-454102A33292}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5E1CF56-CD06-4B81-BBC0-454102A33292}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B5E1CF56-CD06-4B81-BBC0-454102A33292}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3855311F-AB6D-43CB-A7E5-A0882A9AC5BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3855311F-AB6D-43CB-A7E5-A0882A9AC5BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

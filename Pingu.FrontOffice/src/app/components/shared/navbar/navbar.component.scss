@@ -1,0 +1,43 @@
+@import '../../../../assets/scss/colors';
+
+header {
+	background-color:$fondo !important;
+	.navbar{
+		background-color:$fondo !important;
+		.container-fuild{
+			width:100%;
+		}
+	}
+	.logo{
+		float:left;
+		img{
+			min-width: 50px;
+			max-width: 50px;
+			margin-left: 20px;
+		}
+	}
+	.items-menu{
+		width:90%;
+		float:right;
+		.navbar-nav{
+			justify-content: end;
+			margin-right:20px !important;
+			margin-top:10px;
+			li{
+				a{
+					border-top:solid 2px transparent;
+					color:$color;
+					padding-top:1px;
+					padding-bottom:1px;
+				}
+				a:hover{
+					border-bottom:solid 2px $color;
+				}
+				a.active{
+					border-bottom:solid 2px $color;
+					border-top:solid 2px $color;					
+				}
+			}
+		}
+	}
+}

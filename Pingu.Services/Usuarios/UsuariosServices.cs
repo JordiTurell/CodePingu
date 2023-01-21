@@ -1,39 +1,54 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Logging;
-using Pingu.Config.Abstract;
 using Pingu.Config.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Pingu.Services.Models;
+using Pingu.Services.Utils;
+using System.Data.Entity;
 
 namespace Pingu.Services.Usuarios
 {
     public class UsuariosServices : IUsuariosServices
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        
-        public UsuariosServices(UserManager<ApplicationUser> userManager)
+        private readonly RoleManager<IdentityRole> _roleManager;
+                
+        public UsuariosServices(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
+            _roleManager = roleManager;
         }
 
-        public async Task CreateUser()
+        public async Task<UsuarioVM> Edit(RequestItem<UsuarioVM> request)
         {
-            ApplicationUser u = new ApplicationUser() {
-                UserName = "jorditn84@hotmail.com",
-                Email = "jorditn84@hotmail.com",
-                EmailConfirmed = true,
-                LockoutEnabled = true,
-                NickName = "Z4dk1el"
-            };
-
-            IdentityResult result = await _userManager.CreateAsync(u, "Sawamura1984");
-            if (result.Succeeded)
+            ApplicationUser user = await _userManager.FindByIdAsync(request.item.Id.ToString());
+            if (user != null)
             {
-                var a = "fds";
+                user.NickName = request.item.Nombre;
+                await _userManager.UpdateAsync(user);
+                IList<string> roles = await _userManager.GetRolesAsync(user);    
+                await _userManager.RemoveFromRolesAsync(user, roles);
+
+                IdentityRole role = await _roleManager.FindByIdAsync(request.item.IdRol.ToString());
+                await _userManager.AddToRoleAsync(user, role.Name);
+                return request.item;
             }
+            return null;
+        }
+
+       public async Task<List<UsuarioVM>> GetUsuarios()
+        {
+            IQueryable<ApplicationUser> users = _userManager.Users;
+            List<UsuarioVM> response = new List<UsuarioVM>();
+            foreach(ApplicationUser user in users)
+            {
+             
+                response.Add(new UsuarioVM()
+                {
+                    Id = Guid.Parse(user.Id),
+                    Nombre = user.NickName,
+                    Rol = ""
+                });
+            }
+            return response;
         }
     }
 }

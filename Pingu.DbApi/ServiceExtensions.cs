@@ -5,6 +5,8 @@ using Pingu.DbApi.JwtFeatures;
 using Pingu.Entities;
 using Pingu.Services.Apuntes;
 using Pingu.Services.Clases;
+using Pingu.Services.Roles;
+using Pingu.Services.Usuarios;
 
 namespace Pingu.DbApi
 {
@@ -14,6 +16,7 @@ namespace Pingu.DbApi
         {
             collection.AddScoped<IRepository<Lenguajes>, EfRepository<Lenguajes>>();
             collection.AddScoped<IRepository<Apuntes>, EfRepository<Apuntes>>();
+
         }
 
         public static void Interface(IServiceCollection collection)
@@ -22,6 +25,8 @@ namespace Pingu.DbApi
             collection.AddScoped<IJWTService, JWTService>();
             collection.AddScoped<ILenguajesServices, LenguajesServices>();
             collection.AddScoped<IApuntesServices, ApuntesServices>();
+            collection.AddScoped<IRolesService, RolesService>();
+            collection.AddScoped<IUsuariosServices, UsuariosServices>();
         }
         public static void RegisterRepos(this IServiceCollection collection)
         {

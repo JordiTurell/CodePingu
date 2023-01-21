@@ -9,6 +9,9 @@ import { LoginGuard } from './guards/login.guard';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { ApuntesComponent } from './components/apuntes/apuntes.component';
 import { ApuntesCrudComponent } from './components/apuntes/apuntescrud/apuntescrud.component';
+import { RolesComponent } from './components/roles/roles.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { RolescrudComponent } from './components/roles/rolescrud/rolescrud.component';
 
 
 const routes: Routes = [  
@@ -23,6 +26,10 @@ const routes: Routes = [
       { path: 'apuntes', component: ApuntesComponent, canActivate: [LoginGuard] },
       { path: 'apuntes/create', component: ApuntesCrudComponent, canActivate: [LoginGuard] },
       { path: 'apuntes/edit/:id', component: ApuntesCrudComponent, canActivate: [LoginGuard] },
+      { path: 'roles', component: RolesComponent, canActivate: [LoginGuard] },
+      { path: 'roles/create', component: RolescrudComponent, canActivate: [LoginGuard] },
+      { path: 'roles/edit/:id', component: RolescrudComponent, canActivate: [LoginGuard] },
+      { path: 'usuarios', component: UsuariosComponent, canActivate: [LoginGuard] },
       { path: "", component:InicioComponent, pathMatch: "full" },
     ]
   },

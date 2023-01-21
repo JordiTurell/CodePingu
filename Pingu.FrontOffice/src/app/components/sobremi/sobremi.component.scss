@@ -1,0 +1,101 @@
+@import '../../../assets/scss/colors';
+@import '../../../assets/scss/fonts';
+@import '../../../assets/scss/animations';
+
+.presentacion{
+	padding: 5%;
+	padding-top:10%;
+	h1{
+		color: $tituloh1;
+		font-weight: 700;
+		font-family: $fonttitle;
+		font-size: 50px;
+	}
+}
+
+.sectionweb{
+	padding-left:10%;
+	padding-top:10%;
+	position:relative;
+
+	h3{
+		span{
+			color:$white;
+			font-size:20px;
+			font-family: $fonttitle;
+		}
+	}
+
+	.line-title{
+		height:2px;
+		background-color:$effectimg;
+		position:absolute;
+		margin-top: -25px;
+	}
+
+	#line-sobremi{
+		margin-left:14%;
+		width:50%;
+	}
+
+	#imgsobremi{
+		position:relative;
+	
+		.effectimg{
+			position:absolute;
+			height: 371px;
+			width:400px;
+			z-index: 2;	
+			border-radius:20px;
+			background-image: linear-gradient($effectimg, $effectimg), url('../../../assets/img/code.jpg');
+			background-size: 100%;
+		}	
+		.lineimg{
+			position:absolute;
+			border-radius:10px;
+			border: solid 2px $color;
+			height:371px;
+			width:400px;
+			margin-top: 20px;
+			margin-left:20px;
+			z-index:-1;
+		}
+	}
+	#imgsobremi:hover{
+		.effetcimg{
+			animation: imagen 0.8s forwards;
+		}
+		.lineimg{
+			animation: borderimage 0.8s forwards;
+		}
+	}
+
+	.language{
+		padding:0px;
+		display:inline-block;
+		padding-right:10%;
+		padding-left:10%;
+
+		li{
+			list-style: none;
+			cursor: context-menu;
+			span{
+				color:$white
+			}
+		}
+
+		li:hover{
+			span{
+				color:$color;
+			}
+		}
+		
+		li:before {
+			content: "»"; /* FontAwesome Unicode */
+			display: inline-block;
+			margin-left: -1.3em; /* same as padding-left set on li */
+			width: 1.3em; /* same as padding-left set on li */
+			color:$color;
+		}
+	}
+}

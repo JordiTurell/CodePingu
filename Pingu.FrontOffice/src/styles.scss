@@ -1,0 +1,36 @@
+@import '../src/assets/scss/colors';
+@import '../src/assets/scss/fonts';
+
+body{
+	background-color:$fondo;
+	margin:0px;
+	padding:0px;
+	color: $tituloh1;
+	font-family: $text;
+}
+
+.pointmouse{
+	border:solid 2px $pointmouse;
+	width:2px;
+	height:2px;
+	border-radius:100%;
+	position:absolute;
+	z-index:2;
+	-webkit-transition: all 1s forward;
+	transition: all 1s forward;
+}
+
+.roundmouse{
+	border-radius:100%;
+	background-color: $roundmouse;
+	width:20px;
+	height: 20px;
+	position:absolute;
+	z-index:1;
+	-webkit-transition: all 1s forward;
+	transition: all 1s forward;
+}
+
+.text-primary{
+	color:$color !important;	
+}
