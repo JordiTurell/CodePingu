@@ -1,4 +1,5 @@
 export class Tabs{
 	name!:string;
-	description!:string;
+	title!: string;
+	description!: Array<string>;
 }

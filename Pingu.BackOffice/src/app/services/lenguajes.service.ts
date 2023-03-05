@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Guid } from 'guid-typescript';
@@ -26,8 +26,9 @@ export class LenguajesServices {
         item: item,
         token: (this.loginservice.token != null) ? this.loginservice.token : '',
      };
+     const header : HttpHeaders = this.loginservice.setheader()
      return new Promise(resolve => {
-        this.http.post(`${url}/api/Clases/SetClases`, data).subscribe((res: any) => {
+        this.http.post(`${url}/api/Clases/SetClases`, data, { headers: header }).subscribe((res: any) => {
         if (res.status) {
           resolve(true)
         } else {
@@ -43,8 +44,9 @@ export class LenguajesServices {
       item: item,
       token: (this.loginservice.token != null) ? this.loginservice.token : '',
     };
+    const header : HttpHeaders = this.loginservice.setheader()
     return new Promise(resolve => {
-      this.http.post(`${url}/api/Clases/EditClases`, data).subscribe((res: any) => {
+      this.http.post(`${url}/api/Clases/EditClases`, data, { headers: header }).subscribe((res: any) => {
         if (res.status) {
           resolve(true)
         } else {
@@ -59,9 +61,10 @@ export class LenguajesServices {
     let data: RequestItem<LenguajesVM> = {
       item: item,
       token: (this.loginservice.token != null) ? this.loginservice.token : '',
-    };
+    }; 
+    const header : HttpHeaders = this.loginservice.setheader()
     return new Promise(resolve => {
-      this.http.post(`${url}/api/Clases/DeleteClases`, data).subscribe((res: any) => {
+      this.http.post(`${url}/api/Clases/DeleteClases`, data, { headers : header }).subscribe((res: any) => {
         if (res.status) {
           resolve(true)
         } else {
@@ -79,9 +82,15 @@ export class LenguajesServices {
       page: 0,
       token: (this.loginservice.token != null) ? this.loginservice.token : ''
     }
+    const header : HttpHeaders = this.loginservice.setheader()
     return new Observable(observer => {
-      this.http.post(`${url}/api/Clases/GetClases`, data).subscribe((res: any) => {
+      this.http.post(`${url}/api/Clases/GetClases`, data, { headers: header }).subscribe((res: any) => {
         observer = res;
+        return observer
+      },
+      (error:any) => {
+        console.log(error)
+        this.loginservice.logout()
       })
     })
   }
@@ -91,8 +100,9 @@ export class LenguajesServices {
       item: item,
       token: (this.loginservice.token != null) ? this.loginservice.token : '',
     };
+    const header : HttpHeaders = this.loginservice.setheader()
     return new Promise(resolve => {
-      this.http.post(`${url}/api/Clases/GetItem`, data).subscribe((res: any) => {
+      this.http.post(`${url}/api/Clases/GetItem`, data, { headers:header }).subscribe((res: any) => {
         if (res.status) {
             resolve(res)
         } else {

@@ -9,10 +9,10 @@ import {Tabs} from 'src/app/Models/Tabs';
 export class SobremiComponent {
 	
 	public tabsname: Tabs[] = [
-			{ name : 'Olr', description : 'Olr caca' },
-			{ name : 'Flutter', description : 'Flutter bueno' },
-			{ name : 'Autonomo', description : 'Autonomo :D' },
-			{ name : 'Extreme-it', description : 'Exit :D pero es empresa i hi han follons' },
+			{ name : 'Extreme-it', title: 'Extreme-it', description : ['Creación de aplicaciones web en Net Core.', 'Construcción de bases de datos.', 'Todas las aplicaciones realizadas a medida para el cliente.'] },
+			{ name : 'Autonomo', title: 'Autonomo', description : ['Creación de App\'s en Android.', 'Creación de aplicaciones web en Net Core, PHP, Ruby on Rails.'] },
+			{ name : 'Flutter', title: 'Flutter (Terrassa)', description : ['Creación de aplicaciones web a medida.', 'Creación de portales en Wordpress con plugins a medida.'] },
+			{ name: 'Olr', title : 'Olr (Barcelona)', description : ['Creación de aplicaciones web con Net Framework.', 'Creación de bases de datos.', 'Aplicaciones nativas en Android.'] },
 		];
 
 	constructor(){

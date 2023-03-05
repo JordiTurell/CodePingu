@@ -45,7 +45,7 @@ namespace Pingu.Services.Usuarios
                 {
                     Id = Guid.Parse(user.Id),
                     Nombre = user.NickName,
-                    Rol = ""
+                    Rol = _userManager.GetRolesAsync(user).GetAwaiter().GetResult().FirstOrDefault(),
                 });
             }
             return response;

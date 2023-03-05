@@ -20,7 +20,7 @@
 
 	h3{
 		span{
-			color:$white;
+			color:$color;
 			font-size:20px;
 			font-family: $fonttitle;
 		}
@@ -95,6 +95,35 @@
 			display: inline-block;
 			margin-left: -1.3em; /* same as padding-left set on li */
 			width: 1.3em; /* same as padding-left set on li */
+			color:$color;
+		}
+	}
+
+	.img-left-project{
+		position:relative;
+		.effect-img{
+			background-color:$effectimg;
+			width:96%;
+			height: 100%;
+			position:absolute;
+			border-radius: 5px;
+			-webkit-transtion:all 0.4s;
+			transition:all 0.4s;
+		}
+		.effect-img:hover{
+			background-color:transparent;
+		}
+		img{
+			width:100%;
+			border-radius: 5px;
+		}
+	}
+}
+
+.languages{
+	ul{
+		list-style:none;
+		li{
 			color:$color;
 		}
 	}

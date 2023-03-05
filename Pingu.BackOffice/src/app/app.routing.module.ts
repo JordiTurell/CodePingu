@@ -30,7 +30,6 @@ const routes: Routes = [
       { path: 'roles/create', component: RolescrudComponent, canActivate: [LoginGuard] },
       { path: 'roles/edit/:id', component: RolescrudComponent, canActivate: [LoginGuard] },
       { path: 'usuarios', component: UsuariosComponent, canActivate: [LoginGuard] },
-      { path: "", component:InicioComponent, pathMatch: "full" },
     ]
   },
   { path: 'login', component: LoginComponent },

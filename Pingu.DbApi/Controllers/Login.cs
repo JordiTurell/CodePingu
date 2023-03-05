@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +26,7 @@ namespace Pingu.DbApi.Controllers
 
         [Route("ValidateToken")]
         [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> ValidateToken([FromBody] RequestItem<string> token)
         {
             JwtSecurityToken t = new JwtSecurityTokenHandler().ReadJwtToken(token.item);
@@ -72,18 +74,5 @@ namespace Pingu.DbApi.Controllers
             return Ok(response);
         }
 
-        [Route("Demo")]
-        [HttpPost]
-        public IActionResult Demo(RequestItem<string> data)
-        {
-            if(data.item == "holi")
-            {
-                return Ok(data);
-            }
-            else
-            {
-                return BadRequest();
-            }
-        }
     }
 }

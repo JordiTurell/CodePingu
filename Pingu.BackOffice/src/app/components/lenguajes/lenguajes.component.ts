@@ -43,6 +43,6 @@ export class LenguajesComponent implements AfterViewInit{
     this.idClase = $('#delete').data('id')
     this.lenguajesservices.Delete($('#delete').data('obj'));
     
-    this.router.navigate(['/dashboard/lenguajes'])
+    location.reload()
   }
 }

@@ -6,32 +6,21 @@
 	height: auto;
 }
 
-.email{
-	position: absolute;
-	margin-left:95vw;	
-	z-index:1;	
-	.content-email{
-		position: fixed;
-		transform: rotate(90deg);
-		a{
-			color: $color;
-			font-size:11px;
-			font-family: $text;
-		}
-	}
-
-	.line{
-		height:2px;
-		background-color:red;
-		position:absolute;	
-		z-index:99999;
-
-
-	}
+.pointmouse{
+	transition:all 0.4s forward;
 }
 
+.roundmouse{
+	transition:all 0.4s forward;
+}
 
-
-
-
-
+footer{
+	padding-top: 40px;
+	p{
+		font-size:12px;
+		font-weight: 700;
+	}
+	p:hover{
+		color:$color;
+	}
+}

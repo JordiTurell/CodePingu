@@ -30,7 +30,7 @@ export class TabshorizontalComponent implements AfterViewInit{
 
 		tablinks = document.querySelectorAll<HTMLElement>('.tablinks')
 		for(a = 0; a < tablinks.length; a++){
-			tablinks[a].className = tablinks[a].className.replace('active', '')
+			tablinks[a].className = tablinks[a].className.replace(' active', '')
 		}
 
 		//let id = (event.currentTarget as HTMLElement).id
@@ -39,7 +39,7 @@ export class TabshorizontalComponent implements AfterViewInit{
 		if(tab != null){
 			tab.style.display = 'block'			
 		}
-		(event.currentTarget as HTMLElement).className += 'active'
+		(event.currentTarget as HTMLElement).className += ' active'
 		//event.currentTarget?.className += 'active'
 		
 	}

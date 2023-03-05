@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Pingu.DbApi.JwtFeatures;
 using Pingu.Services.Clases;
 using Pingu.Services.Utils;
@@ -7,6 +9,7 @@ namespace Pingu.DbApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ClasesController:Controller
     {
         private readonly ILenguajesServices _service;

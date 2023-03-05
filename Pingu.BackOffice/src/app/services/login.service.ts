@@ -1,5 +1,5 @@
-import { ENVIRONMENT_INITIALIZER, Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from "../../../src/environment/environment";
 import { RequestItem } from "../Models/RequestItem";
 import { UserVM } from "../Models/UserVM";
@@ -15,8 +15,11 @@ export class LoginService {
 
   token: string | null = null;
   autentificado: boolean = false;
+  header : HttpHeaders | null = null;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { 
+
+  }
 
   login(user: string, pass: string) {
     let data: RequestItem<UserVM> = {
@@ -42,7 +45,7 @@ export class LoginService {
   validatetoken() {
     let data: RequestItem<String> = {
       item: (this.token != null) ? this.token : '',
-      token : 'a'
+      token : (this.token != null) ? this.token : ''
     };
 
     if (data.item == undefined || data.item == '') {
@@ -52,24 +55,26 @@ export class LoginService {
       }
     }
 
-    return new Promise(resolve => {
-      this.http.post(`${url}/api/Login/ValidateToken`, data).subscribe((res: any) => {
+    const header : HttpHeaders = this.setheader()
+      this.http.post(`${url}/api/Login/ValidateToken`, data, { headers: header }).subscribe((res: any) => {
         if (res.status) {
           this.guardartoken(res.item)
-          resolve(true)
         } else {
-          resolve(false)
           this.logout();
         }
-      });
-    });
-  }
+      },
+      (error:any) => {
+        console.log(error)
+        this.logout()
+      })
+   }
 
 
   guardartoken(token: string) {
     this.token = token;
     this.autentificado = true;
     localStorage.setItem('token', token)
+    this.setheader()
   }
 
   logout() {
@@ -80,5 +85,14 @@ export class LoginService {
     if (t != null) {
       localStorage.removeItem('token')
     }
+    this.header = new HttpHeaders()
+  }
+
+  setheader(){
+    this.header = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.token}`
+    });
+    return this.header
   }
 }

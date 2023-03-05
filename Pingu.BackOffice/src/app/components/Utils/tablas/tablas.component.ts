@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, ViewChild, Input } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
 import { CellClickedEvent, ColDef, GridReadyEvent } from 'ag-grid-community';
@@ -48,7 +48,8 @@ export class TablasComponent {
       items: 25,
       page: 0
     };
-    this.rowData = this.http.post<any>(`${url}/api/${this.url}`, data)
+    const header : HttpHeaders = this.loginservice.setheader()
+    this.rowData = this.http.post<any>(`${url}/api/${this.url}`, data, { headers: header })
   }
 
   // Example of consuming Grid Event
